@@ -18,19 +18,16 @@ import { useState} from 'react'
 
 
 
-
 function Profile() {
 
   const [hovered, setHovered] = useState(0);
 
   function skillLogosHovered() {
     setHovered(1);
-    console.log(1);
   }
   
   function skillLogosLeave() {
     setHovered(0);
-    console.log(0);
   }
 
 

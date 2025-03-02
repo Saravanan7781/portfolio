@@ -1,0 +1,74 @@
+.percentageOfStack{
+    height: 100vh;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.stackSpaceForStacks{
+    height: 90%;
+    border: 2px solid red;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.stacksIknowTab{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+.stacksProgramming, .stacksFrontend, .stacksBackend, .stacksDatabase{
+    height: 18%;
+    width: 90%;
+    border-radius: 1.2ch;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center ;
+    border: 2px solid green;
+}
+
+
+.programmingLogos img, .frontendSkills img,.backendSkills img,.stacksDatabase img{
+    height: 90%;
+    width: 100%;
+    object-fit: contain;
+    /* background-color: black; */
+}
+
+.programmingLogos, .frontendSkills,.backendSkills,.dbSkills{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+
+
+.elaborationOfTheStackSelected{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid green;
+}
+
+.specializationOfStack{
+    height: 80%;
+    width: 80%;
+    border: 1px solid red;
+}
+
+
