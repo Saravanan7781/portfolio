@@ -51,7 +51,12 @@ function PercentageOfStack() {
         <div className="elaborationOfTheStackSelected">
           <h1>Specialization</h1>
           <div className="specializationOfStack">
-            
+                   <div className="stackSelected">
+              <img src={ react} alt="" />
+            </div>
+            <div className="detailsOfTheSelectedStack">
+
+            </div>
               </div>
           </div>
         </div>

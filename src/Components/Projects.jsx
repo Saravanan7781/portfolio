@@ -46,27 +46,27 @@ function Projects( {data} ) {
                   
             
           <div className="innerLayout1">
-              <div className="userDetails">
+              {/* <div className="userDetails">
                     <img className="userProfile" src={ user_dp} alt="" />
                       <p className="username">{username }</p>
-              </div>
+              </div> */}
 
               <div className="imageByUser">
                   <img src={posted_image} alt="uchichaMadara"/>
               </div>
               <div className="footerOfPostLayout">
                   
-                      <div className="overallInsights">
+                      {/* <div className="overallInsights">
                       <div className="upvoteContent iconsContent">
                           <BiSolidUpvote style={{ color: "#f14545" }} size={28} />
                           
                       </div>
                       <p>{ upvote_count}</p>
                           
-                      </div>
+                      </div> */}
 
                       <div className="messagePerson iconsContent">
-                  <AiOutlineMessage style={{ color: "white" }} size={26} />
+                  <p>Stack: </p>
                       </div>
 
                       <div className="shareCotent iconsContent">
