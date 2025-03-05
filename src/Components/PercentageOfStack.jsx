@@ -10,6 +10,8 @@ import node from '../assets/skillLogos/node.png'
 import java from '../assets/skillLogos/java.jpeg'
 import express from '../assets/skillLogos/express.png'
 
+import ElaborationOfStack from '../SubComponents/ElaborationOfStack'
+
 function PercentageOfStack() {
   return (
     <div className="percentageOfStack">
@@ -48,17 +50,7 @@ function PercentageOfStack() {
               <img src={mongo} alt="" /></div>
                 </div>
         </div>
-        <div className="elaborationOfTheStackSelected">
-          <h1>Specialization</h1>
-          <div className="specializationOfStack">
-                   <div className="stackSelected">
-              <img src={ react} alt="" />
-            </div>
-            <div className="detailsOfTheSelectedStack">
-
-            </div>
-              </div>
-          </div>
+          <ElaborationOfStack />
         </div>
     </div>
   )
