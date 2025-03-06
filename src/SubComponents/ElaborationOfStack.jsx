@@ -32,7 +32,7 @@ function ElaborationOfStack() {
                   </div>
                   <div className="skillSelectedForStack debugOfTheSkillSelected">
                       <p>Debug</p>
-                      <div className="progressBarOfTheStackSelected"></div>
+                      <div className="progressBarOfTheStackSelected" ></div>
                   </div>
             </div>
               </div>

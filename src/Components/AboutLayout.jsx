@@ -17,7 +17,7 @@ function AboutLayout() {
   useEffect(() => {
     function rotateCards() {
       let angle = 0;
-      let cards = document.querySelectorAll('.descriptionBox');
+      let cards = document.querySelectorAll('.descriptionBoxForMe');
       
       cards.forEach((card, index) => {
         if (card.classList.contains('descriptionBoxAway')) {
@@ -32,7 +32,7 @@ function AboutLayout() {
 
     function scrollEventListener() {
       let target = 300;
-      let cards = document.querySelectorAll('.descriptionBox');
+      let cards = document.querySelectorAll('.descriptionBoxForMe');
       let stackArea = document.querySelector('.dupContainerForAboutPage');
       
       if (!stackArea) return; // Prevents errors if element is missing

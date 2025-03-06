@@ -61,28 +61,32 @@
     width: 100%;
 }
 
-.descriptionBox:nth-child(1){
+.descriptionBoxForMe:nth-child(1){
     background-color: rgb(190, 42, 42);
 }
-.descriptionBox:nth-child(2) {
+.descriptionBoxForMe:nth-child(2) {
     background-color:  rgb(91, 118, 191);
 }
-.descriptionBox:nth-child(3) {
+.descriptionBoxForMe:nth-child(3) {
     background-color: rgb(113, 220, 115);
 }
 
 
-.descriptionBox{
+.descriptionBoxForMe{
     height: 60%;
     transition: transform 0.5s ease-in-out;
-    width: 65%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
     position: absolute;
     border-radius: 1.3ch;
     /* border: 3px solid green; */
     padding: 1.2ch;
 }
 
-.descriptionBox h1{
+.descriptionBoxForMe h1{
     display: flex;
     align-items: center;
     height: 16%;
@@ -91,7 +95,7 @@
     font-weight: 400;
 }
 
-.descriptionBox p{
+.descriptionBoxForMe p{
     font-family: poppins;
     font-weight: 300;
     font-size: .9rem;

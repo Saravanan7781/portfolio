@@ -1,4 +1,5 @@
 import React from 'react'
+import react from '..//assets/skillLogos/react.png'
 
 function DescriptionBox({ description: { title,desc} }) {
   // const { }
@@ -6,9 +7,17 @@ function DescriptionBox({ description: { title,desc} }) {
   // const {description } = props;
   // console.log(title)
   return (
-      <div className="descriptionBox">
-      <h1>{ title}</h1>
-      <p>{ desc}</p>
+      <div className="descriptionBoxForMe">
+      {/* <h1>{title}</h1> */}
+
+      <div className="descriptionBoxFiller">
+              <div className="descriptonboxIMG">
+
+      <img src={ react} alt="" />
+      </div>
+      </div>
+      
+      {/* <p>{ desc}</p> */}
     </div>
   )
 }
