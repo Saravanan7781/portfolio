@@ -42,9 +42,13 @@ function Entry() {
           <h1>Web developer</h1>
         </div>
               <div className={ `entryImage ${image ? "entryImageShow" : ""}` }>
-                        <img  src={me} alt="My Image" />
+          <img src={me} alt="My Image" />
+            
                 </div>
       </div>
+      {/* <div className="innerAnotherContanerForStrike">
+        
+      </div> */}
     </div>
   );
 }

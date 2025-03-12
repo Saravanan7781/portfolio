@@ -108,7 +108,8 @@
 .skillSelectedForStack{
     height: 25%;
     display: flex;
-    align-items: center;
+    gap: 8%;
+    transition: 1s;
     justify-content: center;
     flex-direction: column;
     width: 80%;
@@ -120,10 +121,8 @@
 }
 
 .progressBarOfTheStackSelected{
-
-    width:100%;
+    width:0entr;
     height: 45%;
-    /* transition: ; */
     border-radius: 1.15ch;
     background-color: rgb(237, 53, 53);
     position: relative;

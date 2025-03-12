@@ -13,9 +13,22 @@
     width: 60%;
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: center;
     border: 2px solid black;
 }
+
+.innerAnotherContanerForStrike{
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 3%;
+clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    /* z-index: -; */
+    background-color: black;
+
+}
+
 .innerEntryContainerH1{
     position: absolute;
     display: flex;
