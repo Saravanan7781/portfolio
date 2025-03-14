@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+import nightSkill from  '../assets/nightSkillAchievement.jpeg'
+import bitHacks from '../assets/bithacksAchievement.jpg'
 
 import DescriptionBox from './DescriptionBox';
 
 function AboutLayout() {
   const descDetails = [
-   { title: 'Why Choose Us?', desc: " [Your Platform Name] is more than just a networking platform—it's a launchpad for innovation. Unlike traditional startup platforms, we ensure that ideas are shared transparently, encouraging entrepreneurs to take ownership through patents. Our system includes robust investor verification, crowdfunding options, and engagement analytics to help entrepreneurs track investor interest. We provide secure communication channels, allowing meaningful investor-entrepreneur interactions. By integrating a merit-based upvote system and detailed profiles, we ensure that the best ideas gain visibility. Whether you're an entrepreneur or an investor, our platform offers the right tools to drive startup success." },
     {
-      title: 'Our Mission ',
-      desc: "At Your Platform Name, our mission is to create a thriving ecosystem where young entrepreneurs can connect with visionary investors to bring their ideas to life. We believe in fostering innovation by providing a transparent and collaborative platform for startup funding. By encouraging entrepreneurs to patent their ideas and showcase them confidently, we ensure that intellectual property is valued. Our goal is to break barriers in startup funding, making investment opportunities accessible to both new and experienced entrepreneurs. Whether you're looking to launch a business or fund the next big innovation, we're here to make it happen."
+     img: nightSkill
+    },
+    {
+      img:bitHacks
     },
       
    

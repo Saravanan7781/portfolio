@@ -14,12 +14,13 @@ import mysql from '../assets/skillLogos/mySQL.png'
 import node from '../assets/skillLogos/node.png'
 
 
-import { useState} from 'react'
+import { useState,useRef} from 'react'
+import UseCatAnimation from './customAnimations/UseCatAnimation';
 
 
 
 function Profile() {
-
+  const profileRef = useRef();
   const [hovered, setHovered] = useState(0);
 
   function skillLogosHovered() {
@@ -30,29 +31,31 @@ function Profile() {
     setHovered(0);
   }
 
+  UseCatAnimation(profileRef);
+
 
   return (
     <div className="mainProfileContainer">
-      <div className='profile'>
+      <div className='profile' >
         <div className="catWithSkate">
           <img src={cat} alt="" className='cat' height={ `115px`} width={ `300px`}/>
           <img src={skateboard} alt="" height={`70px`} width={ `300px`} className='skateboard'/>
         </div>
       </div>
       <div className="subProfileContainer">
-        <div className="avatar">
+        <div className="avatar" ref={profileRef}>
           <img src={tv } alt=""className="tv" />
           <img onMouseEnter={skillLogosHovered} 
             onMouseLeave={skillLogosLeave}
             src={myLogo} alt="" className="myLogo" />
           
-          <img src={react} alt="react" height={`100px`} className={`skillLogos ${hovered ? 'originalPos1' : ''}`} />
-          <img src={mongo} alt="mongo" height={`100px`} className={`skillLogos ${hovered ? 'originalPos2' : ''}`}/>
+          <img src={react} alt="react" height={`100px`} className={`skillLogos`} />
+          <img src={mongo} alt="mongo" height={`100px`} className={`skillLogos`}/>
           {/* <img src={html} alt="html" height={`100px`} className="skillLogos originalPos3"/> */}
-          <img src={node} alt="node" height={`100px`} className={`skillLogos ${hovered ? 'originalPos3' : ''}`}/>
-          <img src={css} alt="css" height={`100px`} className={`skillLogos ${hovered ? 'originalPos4' : ''}`}/>
-          <img src={c} alt="c" height={`100px`} className={`skillLogos ${hovered ? 'originalPos5' : ''}`}/>
-          <img src={mysql} alt="mysql" height={`100px`} className={`skillLogos ${hovered ? 'originalPos6' : ''}`}/>
+          <img src={node} alt="node" height={`100px`} className={`skillLogos  `}/>
+          <img src={css} alt="css" height={`100px`} className={`skillLogos  `}/>
+          <img src={c} alt="c" height={`100px`} className={`skillLogos  `}/>
+          <img src={mysql} alt="mysql" height={`100px`} className={`skillLogos  `}/>
 
           </div>
       </div>

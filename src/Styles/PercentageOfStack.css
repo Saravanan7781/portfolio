@@ -1,6 +1,6 @@
 .percentageOfStack{
     height: 100vh;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -11,6 +11,7 @@
     height: 90%;
     border: 2px solid red;
     width: 90%;
+    border-radius: 1.2ch;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -19,6 +20,7 @@
 .stacksIknowTab{
     width: 63%;
     height: 90%;
+    border-radius: 1.3ch;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,6 +42,7 @@
 .programmingLogos img, .frontendSkills img,.backendSkills img,.stacksDatabase img{
     height: 90%;
     width: 100%;
+    cursor: pointer;
     object-fit: contain;
     /* background-color: black; */
 }
@@ -58,6 +61,7 @@
 .elaborationOfTheStackSelected{
     width: 30%;
     height: 90%;
+    border-radius: 1.2ch;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +76,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .stackSelected{
@@ -89,15 +93,16 @@
 .stackSelected img{
     /* border: 1px solid black; */
     
-    height: 70%;
+    height: 50%;
     width: auto;
 
     object-fit: contain;
 }
 
 .detailsOfTheSelectedStack{
-    height: 50%;
-    border: 2px solid black;
+    height: 60%;
+    
+    /* border: 2px solid black; */
     width: 80%;
     display: flex;
     justify-content: center;
@@ -108,10 +113,13 @@
 .skillSelectedForStack{
     height: 25%;
     display: flex;
+    /* border-radius: 1ch; */
+    border-bottom: 1px solid black;
     gap: 8%;
     transition: 1s;
     justify-content: center;
     flex-direction: column;
+    border-bottom: 1px solid black;
     width: 80%;
 }
 

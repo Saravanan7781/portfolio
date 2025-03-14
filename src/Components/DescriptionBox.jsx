@@ -1,7 +1,7 @@
 import React from 'react'
 import react from '..//assets/skillLogos/react.png'
 
-function DescriptionBox({ description: { title,desc} }) {
+function DescriptionBox({ description: { title,desc,img} }) {
   
   return (
       <div className="descriptionBoxForMe">
@@ -9,7 +9,7 @@ function DescriptionBox({ description: { title,desc} }) {
       <div className="descriptionBoxFiller">
               <div className="descriptonboxIMG">
 
-      <img src={ react} alt="" />
+                    <img src={ img} alt="" />
       </div>
       </div>
       

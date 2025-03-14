@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../Styles/Projects.css'
 
 import { BiSolidUpvote  } from "react-icons/bi";
@@ -6,7 +6,7 @@ import { BiSolidUpvote  } from "react-icons/bi";
 import { FaShare } from "react-icons/fa6";
 
 import { AiOutlineMessage } from "react-icons/ai";
-import UseScrollAnimation from './UseScrollAnimation';
+import UseScrollAnimation from './customAnimations/UseScrollAnimation';
 
 
 function Projects( {data} ) {

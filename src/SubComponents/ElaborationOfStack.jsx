@@ -3,7 +3,6 @@ import '../Styles/PercentageOfStack.css'
 
 function ElaborationOfStack({ skill = {} } ) {
     const { img, expertise, practice, problemSolving,Debug } = skill;
-    // console.log(expertise);
   return (
       <div className="elaborationOfTheStackSelected">
           <h1>Specialization</h1>
