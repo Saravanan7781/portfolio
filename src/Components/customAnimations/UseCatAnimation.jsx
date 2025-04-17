@@ -19,7 +19,7 @@ function UseCatAnimation(containerRef) {
             }
             else {
                 console.log(isAnimated.current);
-                }
+              }
         
         });
       },
