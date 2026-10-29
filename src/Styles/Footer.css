@@ -1,0 +1,21 @@
+.siteFooter{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch 3ch;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5vh 5vw;
+    border-top: 2px solid black;
+    font-size: .85rem;
+}
+
+.siteFooter ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2ch;
+    list-style: none;
+}
+
+.siteFooter a{
+    text-underline-offset: 3px;
+}

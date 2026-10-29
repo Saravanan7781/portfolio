@@ -1,20 +1,15 @@
 import React from 'react'
-import react from '..//assets/skillLogos/react.png'
 
-function DescriptionBox({ description: { title,desc,img} }) {
-  
+function DescriptionBox({ description: { title, desc, img }, style }) {
   return (
-      <div className="descriptionBoxForMe">
-
+    <figure className="descriptionBoxForMe" style={style}>
       <div className="descriptionBoxFiller">
-              <div className="descriptonboxIMG">
-
-                    <img src={ img} alt="" />
+        <div className="descriptonboxIMG">
+          <img src={img} alt={title} />
+        </div>
+        <figcaption>{title}</figcaption>
       </div>
-      </div>
-      
-      {/* <p>{ desc}</p> */}
-    </div>
+    </figure>
   )
 }
 

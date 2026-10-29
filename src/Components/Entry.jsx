@@ -1,55 +1,46 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Entry.css";
 import me from "../assets/meadobe-cropped.png";
 
-  const preloadImage = (src) => {
-    const img = new Image();
-    img.src = src
-  };
+const fullName = "Saravanan";
 
 function Entry() {
   const [name, setName] = useState("");
-  const fullName = "Saravanan";
   const [image, setImage] = useState(false);
 
   useEffect(() => {
-    preloadImage({me});
-  }, []);
-
-  useEffect(() => {
     let index = 0;
-    let val = "";
-      const func = setInterval(() => {
-        if (index < fullName.length) {
-            val += fullName[index];
-        setName(val); 
-        // console.log(fullName[index]);
-        index++; 
-      } else {
-        clearInterval(func);
-        setImage(true); 
+    const timer = setInterval(() => {
+      index++;
+      setName(fullName.slice(0, index));
+      if (index >= fullName.length) {
+        clearInterval(timer);
+        setImage(true);
       }
     }, 120);
 
-    return () => clearInterval(func);
-  }, []); 
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="EntryContainer">
+    <section className="EntryContainer" id="home">
       <div className="innerEntryContainer">
         <div className="innerEntryContainerH1">
-          <h1 id="innerEntryname">{name}</h1>
-          <h1>Web developer</h1>
+          {/* the typed name is aria-hidden so screen readers get the full text at once */}
+          <h1 aria-label={`${fullName}, web developer`}>
+            <span id="innerEntryname" aria-hidden="true">{name}&nbsp;</span>
+            <span aria-hidden="true">Web developer</span>
+          </h1>
         </div>
-              <div className={ `entryImage ${image ? "entryImageShow" : ""}` }>
-          <img src={me} alt="My Image" />
-            
-                </div>
+        <div className={`entryImage ${image ? "entryImageShow" : ""}`}>
+          <img src={me} alt="Portrait of Saravanan" />
+        </div>
+        <div className={`entryActions ${image ? "entryActionsShow" : ""}`}>
+          <a href="#projects" className="entryButton entryButtonPrimary">View my projects</a>
+          <a href="#contact" className="entryButton">Get in touch</a>
+        </div>
       </div>
-      {/* <div className="innerAnotherContanerForStrike">
-        
-      </div> */}
-    </div>
+    </section>
   );
 }
 

@@ -1,32 +1,19 @@
 .EntryContainer{
     height: 100vh;
     width: 100%;
-    /* border: 2px solid red; */
+    padding-top: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .innerEntryContainer{
-    display: flex;
     height: 100%;
     width: 60%;
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
-    /* border: 2px solid black; */
-}
-
-.innerAnotherContanerForStrike{
-    height: 50%;
-    width: 50%;
-    position: absolute;
-    top: 3%;
-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    /* z-index: -; */
-    background-color: black;
-
 }
 
 .innerEntryContainerH1{
@@ -34,45 +21,78 @@ clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 4rem;
     z-index: 0;
     letter-spacing: .15ch;
-    /* border: 1px solid #ff0000; */
     width: 100%;
 }
 
-/* #innerEntryname::after{
-    border: 2px solid black;
-    width: 3px;
-    background-color: black;
-    content: "";
-} */
+.innerEntryContainerH1 h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.15;
+    min-height: 2.3em;
+}
 
 .entryImage{
     height: 100%;
     width: fit-content;
     position: relative;
-    /* transform: perspective(); */
-    /* z-index: -1; */
-    
     opacity: 0;
     transition: all 1s ease-in-out;
-    /* top: 100px; */
     transform: translateY(150px);
 }
 
 .entryImageShow{
     transform: translateY(0);
-    position: relative;
     opacity: 1;
 }
 
 .entryImage img{
     height: 100%;
     width: 100%;
-    /* perspective-origin: 10000px; */
-    /* object-fit: cover; */
-    /* border: 3px solid red; */
-    
-    /* position: absolute; */
+    object-fit: contain;
+}
+
+.entryActions{
+    position: absolute;
+    bottom: 4vh;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5ch;
+    opacity: 0;
+    transition: opacity 1s ease .6s;
+}
+
+.entryActionsShow{
+    opacity: 1;
+}
+
+.entryButton{
+    padding: 1.1ch 2.4ch;
+    border: 2px solid black;
+    border-radius: 3ch;
+    background-color: whitesmoke;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.entryButtonPrimary{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.entryButton:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .85);
+}
+
+@media (max-width: 800px){
+    .innerEntryContainer{
+        width: 94%;
+    }
 }

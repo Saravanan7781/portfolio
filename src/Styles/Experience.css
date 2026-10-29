@@ -1,0 +1,158 @@
+.experienceSection{
+    padding: 10vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.experienceVisible{
+    opacity: 1;
+    transform: none;
+}
+
+.experienceSection h2{
+    font-size: 2rem;
+    font-weight: 450;
+    text-align: center;
+}
+
+.statsRow{
+    width: min(1100px, 100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2ch;
+    list-style: none;
+}
+
+.statsRow li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4ch;
+    padding: 2ch 1ch;
+    border: 2px solid black;
+    border-radius: 1.7ch;
+    background-color: white;
+    text-align: center;
+}
+
+.statsRow strong{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.statsRow span{
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.experienceColumns{
+    width: min(1100px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3ch;
+    align-items: start;
+}
+
+.experienceColumn{
+    padding: 3ch;
+    border: 2px solid black;
+    border-radius: 2ch;
+    background-color: white;
+}
+
+.experienceColumn h3{
+    margin-bottom: 2.4ch;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .2ch;
+    text-transform: uppercase;
+    opacity: .6;
+}
+
+.timeline{
+    list-style: none;
+    border-left: 2px solid black;
+    margin-left: .6ch;
+}
+
+.timelineItem{
+    position: relative;
+    padding: 0 0 3ch 3ch;
+}
+
+.timelineItem:last-child{
+    padding-bottom: 0;
+}
+
+.timelineItem::before{
+    content: '';
+    position: absolute;
+    left: -.95ch;
+    top: .5ch;
+    height: 1.4ch;
+    width: 1.4ch;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.timelineWhen{
+    font-size: .78rem;
+    font-weight: 500;
+    opacity: .6;
+}
+
+.timelineItem h4{
+    margin-top: .4ch;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.timelinePlace{
+    margin-top: .3ch;
+    font-size: .88rem;
+    font-weight: 300;
+}
+
+.timelinePoints{
+    margin-top: 1.2ch;
+    padding-left: 2ch;
+    display: grid;
+    gap: .8ch;
+    font-size: .88rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.timelineTags{
+    margin-top: 1.4ch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8ch;
+    list-style: none;
+}
+
+.timelineTags li{
+    padding: .3ch 1.2ch;
+    border: 1px solid black;
+    border-radius: 2ch;
+    font-size: .75rem;
+}
+
+@media (max-width: 800px){
+    .experienceColumns{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .experienceSection{
+        opacity: 1;
+        transform: none;
+    }
+}

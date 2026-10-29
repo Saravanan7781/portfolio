@@ -1,151 +1,205 @@
 .percentageOfStack{
-    height: 100vh;
-    /* border: 3px solid black; */
+    min-height: 100vh;
+    padding: 10vh 0 6vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
+    gap: 4vh;
+}
+
+.percentageOfStack h2{
+    font-size: 2rem;
+    font-weight: 450;
 }
 
 .stackSpaceForStacks{
-    height: 90%;
-    /* border: 2px solid red; */
-    width: 90%;
-    border-radius: 1.2ch;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    width: min(1150px, 92%);
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 3ch;
+    align-items: stretch;
 }
 
+/* ---------- skill picker ---------- */
 .stacksIknowTab{
-    width: 63%;
-    height: 90%;
-    border-radius: 1.3ch;
+    padding: 2.2ch;
+    border-radius: 2ch;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    gap: 1.6ch;
     border: 2px solid black;
+    background-color: white;
 }
 
 .stacksProgramming, .stacksFrontend, .stacksBackend, .stacksDatabase{
-    height: 18%;
-    width: 90%;
-    border-radius: 1.2ch;
-    display: flex;
-    /* justify-content: space-evenly; */
-    align-items: center ;
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    align-items: center;
+    gap: 1.5ch;
+    padding: 1.4ch 1.6ch;
+    border-radius: 1.6ch;
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 0, 0, .15);
 }
 
-
-.programmingLogos img, .frontendSkills img,.backendSkills img,.stacksDatabase img{
-    height: 90%;
-    width: 100%;
-    cursor: pointer;
-    object-fit: contain;
-    /* background-color: black; */
+.stackGroupLabel{
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .18ch;
+    text-transform: uppercase;
+    opacity: .55;
 }
 
-.programmingLogos, .frontendSkills,.backendSkills,.dbSkills{
-    height: 80%;
+.skillsRow{
     display: flex;
-    flex-direction: column;
+    gap: 1.4ch;
+}
+
+.skillButton{
+    height: 11vh;
+    min-height: 74px;
+    max-height: 110px;
+    flex: 1 1 0;
+    max-width: 180px;
+    min-width: 0;
+    padding: 1.2ch;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, .12);
+    border-radius: 1.4ch;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
+.skillButton img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 
+.skillButton:hover{
+    transform: translateY(-4px);
+    border-color: var(--accent, black);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .12);
+}
 
+.skillButtonActive{
+    border-color: var(--accent, black);
+    box-shadow: 0 0 0 3px var(--accent, black), 0 8px 18px rgba(0, 0, 0, .15);
+    transform: translateY(-4px);
+}
+
+/* ---------- specialization card ---------- */
 .elaborationOfTheStackSelected{
-    width: 30%;
-    height: 90%;
-    border-radius: 1.2ch;
+    padding: 3ch 2.4ch;
+    border-radius: 2ch;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 2.4ch;
     border: 2px solid black;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.elaborationOfTheStackSelected::before{
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 10ch;
+    background: var(--accent, black);
+    opacity: .12;
+    transition: background .4s ease;
+}
+
+.elaborationOfTheStackSelected h3{
+    position: relative;
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: .2ch;
+    text-transform: uppercase;
+    opacity: .6;
+}
+
+.selectedStackName{
+    position: relative;
+    margin-top: -2ch;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .specializationOfStack{
-    height: 80%;
-    width: 95%;
+    position: relative;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid red; */
+    gap: 3ch;
 }
 
 .stackSelected{
-    height: 35%;
-    width: 50%;
-    border: 2px solid black;
-    border-radius: 90%;
+    height: 16vh;
+    min-height: 110px;
+    aspect-ratio: 1;
+    border: 3px solid var(--accent, black);
+    border-radius: 50%;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-size: contain; */
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, .05), 0 10px 24px rgba(0, 0, 0, .12);
+    transition: border-color .4s ease;
 }
 
 .stackSelected img{
-    /* border: 1px solid black; */
-    
-    height: 50%;
+    height: 52%;
     width: auto;
-
+    max-width: 70%;
     object-fit: contain;
 }
 
 .detailsOfTheSelectedStack{
-    height: 60%;
-    
-    /* border: 2px solid black; */
-    width: 80%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-}
-
-.skillSelectedForStack{
-    height: 25%;
-    display: flex;
-    /* border-radius: 1ch; */
-    /* border-bottom: 1px solid black; */
-    gap: 8%;
-    transition: 1s;
-    justify-content: center;
-    flex-direction: column;
-    /* border-bottom: 1px solid black; */
-    width: 80%;
+    gap: 2ch;
 }
 
 .skillSelectedForStack p{
-    align-items:flex-start;
-    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .8ch;
+    font-size: .9rem;
+}
+
+.skillSelectedForStack p span{
+    font-weight: 600;
+}
+
+.progressTrack{
+    height: 1.2ch;
+    min-height: 9px;
+    border-radius: 1ch;
+    background-color: rgba(0, 0, 0, .08);
+    overflow: hidden;
 }
 
 .progressBarOfTheStackSelected{
-    width:0entr;
-    height: 45%;
-    border-radius: 1.15ch;
-    position: relative;
-}
-
-.progressBarOfTheStackSelected::before{
-    content: '';
-    color: white;
-    display: block;
-    transition: width 2.5s ease;
-    width: 0;
     height: 100%;
-    border: 1px solid white
+    border-radius: 1ch;
+    transition: width .8s cubic-bezier(.2, .8, .2, 1), background-color .4s ease;
 }
 
-.progressBarOfTheStackSelected .debugOfTheSkillSelected{
-    width: 100%;
+@media (max-width: 900px){
+    .stackSpaceForStacks{
+        grid-template-columns: 1fr;
+    }
+    .stacksProgramming, .stacksFrontend, .stacksBackend, .stacksDatabase{
+        grid-template-columns: 1fr;
+        gap: .8ch;
+    }
 }
-

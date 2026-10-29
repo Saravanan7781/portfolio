@@ -1,31 +1,24 @@
-import React from 'react'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 
-function UseScrollAnimation() {
-
+// Adds visibleClass to the referenced element the first time it scrolls into view
+function UseScrollAnimation(ref, visibleClass = 'showTheAnimationForPost') {
     useEffect(() => {
-        const containers = document.querySelectorAll('.wholeLayerForAnimation');
+        const el = ref.current
+        if (!el) return
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('showTheAnimationForPost');
-                    observer.unobserve(entry.target);
+                    el.classList.add(visibleClass)
+                    observer.disconnect()
                 }
-            })
-        },
-        {
-            threshold: 0.2
-        });
-        
-        containers.forEach(container => observer.observe(container));
-    
-        return () => {
-            observer.disconnect();
-        }
-    }, []);
+            },
+            { threshold: 0.15 }
+        )
+        observer.observe(el)
 
- 
+        return () => observer.disconnect()
+    }, [ref, visibleClass])
 }
 
-export default UseScrollAnimation;
+export default UseScrollAnimation

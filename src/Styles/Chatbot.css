@@ -1,0 +1,221 @@
+.chatbot{
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.4ch;
+    font-family: "Poppins", sans-serif;
+}
+
+.chatLauncher{
+    height: 56px;
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+    transition: transform .2s ease;
+}
+
+.chatLauncher:hover{
+    transform: translateY(-3px);
+}
+
+.chatPanel{
+    width: min(380px, 92vw);
+    height: min(560px, 72vh);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 2ch;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .25);
+    animation: chatIn .25s ease both;
+}
+
+.chatHeader{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1ch;
+    padding: 1.6ch 2ch;
+    border-bottom: 2px solid black;
+    background-color: whitesmoke;
+}
+
+.chatHeader div{
+    display: flex;
+    flex-direction: column;
+    gap: .3ch;
+}
+
+.chatHeader strong{
+    font-weight: 600;
+}
+
+.chatHeader span{
+    font-size: .72rem;
+    font-weight: 300;
+}
+
+.chatClose{
+    display: flex;
+    padding: .6ch;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.chatClose:hover{
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.chatMessages{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2ch;
+    padding: 2ch;
+    overflow-y: auto;
+}
+
+.chatBubble{
+    max-width: 86%;
+    padding: 1.1ch 1.7ch;
+    border-radius: 1.6ch;
+    font-size: .88rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.chatBot{
+    align-self: flex-start;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: whitesmoke;
+    border-bottom-left-radius: .4ch;
+}
+
+.chatUser{
+    align-self: flex-end;
+    background-color: black;
+    color: whitesmoke;
+    border-bottom-right-radius: .4ch;
+}
+
+.chatSuggestions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8ch;
+}
+
+.chatSuggestions button{
+    padding: .8ch 1.6ch;
+    border: 1px solid black;
+    border-radius: 2ch;
+    background-color: white;
+    font: inherit;
+    font-size: .78rem;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.chatSuggestions button:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.chatError{
+    align-self: center;
+    font-size: .8rem;
+    text-align: center;
+    color: #c0392b;
+}
+
+.chatTyping{
+    display: inline-flex;
+    gap: .5ch;
+    align-items: center;
+    height: 1.4em;
+}
+
+.chatTyping i{
+    height: .8ch;
+    width: .8ch;
+    border-radius: 50%;
+    background-color: black;
+    opacity: .4;
+    animation: chatDot 1s infinite ease-in-out;
+}
+
+.chatTyping i:nth-child(2){ animation-delay: .15s; }
+.chatTyping i:nth-child(3){ animation-delay: .3s; }
+
+.chatForm{
+    display: flex;
+    gap: 1ch;
+    padding: 1.4ch;
+    border-top: 2px solid black;
+}
+
+.chatForm input{
+    flex: 1;
+    min-width: 0;
+    padding: 1.1ch 1.8ch;
+    border: 1px solid black;
+    border-radius: 2ch;
+    background-color: whitesmoke;
+    font: inherit;
+    font-size: .88rem;
+}
+
+.chatForm input:focus{
+    outline: none;
+    border-width: 2px;
+}
+
+.chatForm button{
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.chatForm button:disabled{
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+@keyframes chatIn{
+    from{
+        opacity: 0;
+        transform: translateY(12px) scale(.97);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes chatDot{
+    0%, 100%{ transform: translateY(0); opacity: .35; }
+    50%{ transform: translateY(-4px); opacity: 1; }
+}

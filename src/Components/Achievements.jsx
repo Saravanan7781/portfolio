@@ -3,10 +3,10 @@ import '../Styles/Achievements.css';
 import AboutLayout from './AboutLayout'
 
 function Achievements() {
-    return (
-        <div className="dupContainerForAboutPage">
-            <AboutLayout />
-      </div>
+  return (
+    <section id="achievements" aria-label="Achievements">
+      <AboutLayout />
+    </section>
   )
 }
 

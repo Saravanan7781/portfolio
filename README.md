@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Saravanan S - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio built with React (Create React App). Live at https://saravanan7781.vercel.app/
 
-## Available Scripts
+## Sections
 
-In the project directory, you can run:
+- **Home**: animated name reveal with links to projects and contact
+- **About / Skills**: avatar with orbiting tech logos, plus a clickable skill explorer
+- **Projects**: real projects with tech tags, code links and live demos
+- **Achievements**: scroll-driven card stack
+- **Contact**: validated form (opens your mail app) and social links
 
-### `npm start`
+## Run it
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm start      # http://localhost:3000
+npm run build  # production build in /build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Editing content
 
-### `npm test`
+Everything you will want to change lives in `src/data/`:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| File | What it controls |
+| --- | --- |
+| `projects.js` | project cards (name, description, tags, repo, live link) |
+| `skills.js` | skill logos and their percentage bars |
+| `links.js` | email address and social links |
 
-### `npm run build`
+Achievements are listed at the top of `src/Components/AboutLayout.jsx`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The contact form has no backend: on submit it opens a pre-filled `mailto:` message.
+- The cat animation in the About section uses CSS scroll-driven animations. Browsers without support just show the cat in place.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Chatbot (Claude + RAG)
 
-### `npm run eject`
+The chat bubble answers questions about Saravanan using retrieval-augmented generation.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `api/_lib/knowledge.js`: the facts, one chunk per topic. **Edit this to change what the bot knows.**
+- `api/_lib/retrieve.js`: BM25 keyword retrieval that picks the best chunks for each question.
+- `api/chat.js`: serverless function. Retrieves context, calls Claude, and streams the reply. The API key lives only here.
+- `src/Components/Chatbot.jsx`: the chat widget.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Setup:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Copy `.env.example` to `.env.local` and set `GEMINI_API_KEY` (or `ANTHROPIC_API_KEY` to use Claude).
+2. Run `npm run api` in one terminal and `npm start` in another. CRA proxies `/api` to port 3001.
+3. In production, add the same variable under Vercel > Settings > Environment Variables and redeploy.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gemini tries `gemini-3.5-flash`, then `gemini-3.1-flash-lite`, then `gemini-3.8-flash` if one is overloaded. Set `GEMINI_MODEL` to pin a model. Claude defaults to `claude-opus-5-5`; set `CHAT_MODEL=claude-haiku-5-5` for a cheaper one.

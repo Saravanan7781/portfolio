@@ -1,35 +1,42 @@
-
 import '../Styles/PercentageOfStack.css'
 
-function ElaborationOfStack({ skill = {} } ) {
-    const { img, expertise, practice, problemSolving,Debug,color } = skill;
+const metrics = [
+  { key: 'expertise', label: 'Expertise' },
+  { key: 'practice', label: 'Practice' },
+  { key: 'problemSolving', label: 'Problem Solving' },
+  { key: 'debug', label: 'Debug' },
+]
+
+function ElaborationOfStack({ skill }) {
+  const { name, img, color } = skill;
   return (
-      <div className="elaborationOfTheStackSelected">
-          <h1>Specialization</h1>
-          <div className="specializationOfStack">
-                   <div className="stackSelected">
-              <img src={ img} alt="" />
-            </div>
-            <div className="detailsOfTheSelectedStack">
-                  <div className="skillSelectedForStack expertiseOfTheStackSelected">
-                      <p>Expertise </p>  
-                      <div className="progressBarOfTheStackSelected" style={{"width":expertise , "backgroundColor":color}}></div>
-                  </div>
-                  <div className="skillSelectedForStack practiceOfTheSkillSelected">
-                      <p>Practice</p>
-                      <div className="progressBarOfTheStackSelected" style={{width:practice, "backgroundColor":color} }></div>
-                  </div>
-                  <div className="skillSelectedForStack problemSolvingOfTheSkillSelected">
-                      <p>Problem Solving</p>
-                      <div className="progressBarOfTheStackSelected" style={{width:problemSolving, "backgroundColor":color}}></div>
-                  </div>
-                  <div className="skillSelectedForStack debugOfTheSkillSelected">
-                      <p>Debug</p>
-                      <div className="progressBarOfTheStackSelected" style={{width:Debug, "backgroundColor":color}}></div>
-                  </div>
-            </div>
-              </div>
+    <div className="elaborationOfTheStackSelected" aria-live="polite" style={{ "--accent": color }}>
+      <h3>Specialization</h3>
+      <p className="selectedStackName">{name}</p>
+      <div className="specializationOfStack">
+        <div className="stackSelected">
+          <img src={img} alt={name} />
         </div>
+        <div className="detailsOfTheSelectedStack">
+          {metrics.map(({ key, label }) => (
+            <div className="skillSelectedForStack" key={key}>
+              <p>{label} <span>{skill[key]}%</span></p>
+              <div className="progressTrack">
+                <div
+                  className="progressBarOfTheStackSelected"
+                  role="progressbar"
+                  aria-label={`${name} ${label}`}
+                  aria-valuenow={skill[key]}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  style={{ width: `${skill[key]}%`, backgroundColor: color }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
